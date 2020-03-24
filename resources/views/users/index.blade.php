@@ -10,6 +10,30 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-8 mx-auto">
+				<div class="card border-0 shadow">
+					<div class="card-body">
+						<form action="{{ route('users.store') }}" method="POST">
+							<div class="form-row">
+								<div class="col-sm-3">
+									<input type="text" class="form-control" name="name" placeholder="Nombre">
+								</div>
+								<div class="col-sm-4">
+									<input type="text" class="form-control" name="email" placeholder="Email">
+								</div>
+								<div class="col-sm-3">
+									<input type="password" class="form-control" name="password" placeholder="Clave">
+								</div>
+								<div class="col-auto">
+									@csrf								
+									<button  type="submit" class="btn btn-sm btn-primary btn-block">
+										Enviar
+									</button>
+								</div>
+							</div>
+						</form>
+					</div>
+						
+				</div>
 				<table class="table">
 					<thead>
 						<tr>
