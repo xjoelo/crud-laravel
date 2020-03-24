@@ -18,6 +18,6 @@ Route::post('users', 'UserController@store')->name('users.store');
 Route::delete('users/{user}', 'UserController@destroy')->name('users.destroy');
 
 
-// Route::view('vista','welcome',['users' =>  User::all()]);
+Route::view('vista','welcome');
 
 // ->middleware('auth'); 
