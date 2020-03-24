@@ -4,9 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Http\Requests\StoreUserRequest;
 
 class UserController extends Controller
 {
+	// public function __constuct() // VERIFICA QUE ESTE LOGUEADO
+	// }
+	// 	$this->middleware('auth')
+	// {
+	    
+	
 	public function index()
 	{
 	    $users = User::latest()->get();
@@ -15,14 +22,15 @@ class UserController extends Controller
 	    ]);
 	}
 
-	public function store(Request $request)
+	public function store(StoreUserRequest $request)
 	{
+		/*dd($request->all());
 		$request->validate([
 			'name' => ['required'],
 			'email' => ['required','email','unique:users'],
 			'password' =>['required','min:8']
 
-		]);
+		]);*/
 
 		User::create([
 			'name' => $request->name,
